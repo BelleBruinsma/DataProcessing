@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">Average temperatures in De Bilt in Feb 2016 - Feb 2017.</p>
+<canvas id="myCanvas" width="367" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+
+// Synchronous XMLHttpRequest
+var my_request = new XMLHttpRequest();
+var url = "https://raw.githubusercontent.com/BelleBruinsma/DataProcessing/master/week-2/tempdata.csv";
+var all_data = null;
+my_request.open("GET", url, false);
+my_request.send();	
+temp0 = my_request.responseText.split("\n");
+
+
+//function to transform ------------------
+function createTransform(domain, range){
+    var domain_min = domain[0]
+    var domain_max = domain[1]
+    var range_min = range[0]
+    var range_max = range[1]
+
+    // formulas to calculate the alpha and the beta
+   	var alpha = (range_max - range_min) / (domain_max - domain_min)
+    var beta = range_max - alpha * domain_max
+
+    // returns the function for the linear transformation (y= a * x + b)
+    return function(x){
+      return alpha * x + beta;
+    }
+}
+//----------------------------------------
+
+
+transformed_temp = [];
+true_temp = [];
+
+//iterate over the data 
+for(i = 0; i < temp0.length - 1; i++){
+    temp1= temp0[i];
+    
+    // split the date and temperature in 2
+    temp2= temp1.split(',');
+    date_string = temp2[0];
+    
+    // split from the day month and year from eachother
+    date_year = date_string.slice(0,4);
+	date_month = date_string.slice(4,6);
+	date_day = date_string.slice(6,8);
+
+	date_date = new Date(date_year, date_month -1, date_day);
+	
+	// create transformed temperatures using the function createTransform
+	// who gives a formula back
+	screenbounds = [0,150];
+	range = [-38,254];
+	f = createTransform(range, screenbounds);
+	g = f(temp2[1]);
+	
+	true_temp[i] = temp2[1];
+	transformed_temp[i] = g;
+}
+
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.beginPath();
+	
+true_temp_sorted = true_temp.sort()
+
+// create a canvas for drawing the graph
+for(i = 1; i < temp0.length - 1; i++){
+
+	ctx.moveTo(i-1, 150 - transformed_temp[i-1]);
+	ctx.lineTo(i, 150 - transformed_temp[i]);
+	ctx.stroke();
+}
+
+// create legenda with months (x-as)
+var monthsArray = ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec","Jan"]
+var counter = 0;
+    for (var i = 0; i < 12; i++) {
+        ctx.fillText(monthsArray[i],counter, 150);
+        counter = counter + 30;
+    }
+                
+// create legenda temperature (y-as)
+var temps = ["-5", "0", "5", "10", "15", "20", "25"]
+var y = 150;
+    for (var i = 0; i < 7; i++) {
+        var x = 5;
+        ctx.font = "10px serif";
+        ctx.fillText(temps[i], x, y);
+        y = y - Math.floor(150/6);
+    }
+                    
+</script>
+</body>
+</html>
+
+

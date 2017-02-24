@@ -1,0 +1,37 @@
+h1 {color: steelblue; text-align:center; font-family: times}
+
+p {text-align: center; font-family: times}
+
+p1 {text-align: center; font-family: times}
+
+.barchart text {
+  	font: 10px sans-serif;
+}
+
+svg {
+	display: block;
+	margin: auto;
+}
+
+text {
+	color: black;
+}
+
+.bar{
+    fill: steelblue;
+}
+
+.bar:hover{
+    fill: brown;
+}
+
+.axis {
+	font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}

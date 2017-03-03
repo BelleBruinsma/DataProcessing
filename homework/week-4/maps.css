@@ -1,0 +1,33 @@
+/*
+student: Belle Bruinsma
+student number: 10676759
+datum: 3 maart 2017
+data processing: map in d3 
+*/
+
+body {
+    background-color: whitesmoke;
+}
+
+.text{
+	font-family: times;
+}
+
+#standaard{
+	text-align:left;
+	font-size:13px;
+}
+
+#title{
+	text-align:center;
+	font-size:20px;
+}
+
+/* place map on 20% from left border*/
+#container{
+	margin-left:5%;
+}
+/*set small fontsize for source link under map*/
+#source{
+	font: 10px sans-serif;	
+}

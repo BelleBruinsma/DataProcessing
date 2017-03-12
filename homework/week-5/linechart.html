@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+	Name: Belle Bruinsma
+	Student number: 10676759 
+//-->
+<html lang="en">
+	<head>
+		<title>Line chart</title>
+		<script src="//rawgit.com/Caged/d3-tip/master/index.js"></script>
+		<script src="//d3js.org/d3.v4.min.js"></script>
+		<script src="queue.js"></script>
+		<script src="linechart.js"></script>
+	</head>
+	<body>
+		<h1>Homework week 4</h1>
+		<p>Belle Bruinsma, 10676759</p>
+		<p>Fruit and vegetable annual eatings per capita for children, females and males </p>
+		<svg class="chart"></svg>
+		<div id="options">
+			<h4>Click to include or exclude:</h4>
+			<label class="checkbox">
+				<input type="checkbox" checked= "checked" class="F_Females" value="Fr_Females">Fruits females.
+				<span style="background-color:#9fdf9f;height:0.9em;width:0.9em;margin-right:0.25em;display:inline-block;"/>
+			</label><br>
+			<label class="checkbox">
+				<input type="checkbox" checked= "checked" class="F_Children" value="Fr_Children">Fruits children.
+				<span style="background-color:#40bf40;height:0.9em;width:0.9em;margin-right:0.25em;display:inline-block;"/>
+			</label><br>			
+			<label class="checkbox">
+				<input type="checkbox" checked= "checked" class="F_Males" value="Fr_Males">Fruits males.
+				<span style="background-color:#206020;height:0.9em;width:0.9em;margin-right:0.25em;display:inline-block;"/>
+			</label><br>
+			<p class="datasource">Link to data source: <a href="http://www.pbhfoundation.org/pdfs/about/res/pbh_res/State_of_the_Plate_2015_WEB_Bookmarked.pdf">Click here!</a></p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>Linked views</title>
+  	<meta charset="utf-8">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="linkedviews.css">
+  	<script src="//rawgit.com/Caged/d3-tip/master/index.js"></script>
+ 	<script src="jquery.js"></script>
+	<script src="bootstrap.js"></script>
+	<script src="d3.v4.min.js"></script>
+	<script src="linkedviews.js"></script>
+</head>
+<body>
+	<div class="topnav">
+  		<a class="active" href="linkedviews.html">Home</a>
+  		<a href="about.html">About</a>
+  		<a href="storytelling.html">Storytelling</a>
+  		<a href="design1.html">Design</a>
+	</div>
+	<div class="container">
+        <div class="jumbotron">
+            <h1>Can you buy happiness?</h1>
+        </div>
+	<div class="container-fluid text-center">    
+  		<div class="row content">
+    		<div class="col-sm-6 text-left"> 
+      			<h3>Happy Planet Index vs Gross Domestic Product</h3>
+      			<div1 style="float:left" id="scatterplot"></div1>
+    		</div>
+    		<div class="col-sm-6 text-left"> 
+      			<h3>Happy Planet Index (HPI) per country</h3>
+      			<div2 id="choropleth"></div2>
+    		</div>
+  		</div>
+	</div>
+  	<div class="well">
+  		<h3>How is the Happy Planet Index calculated?</h3>
+		<div class="container">
+  			<img style="float:left" src="wellbeing.png" alt="Chania" width="40" height="40"> 
+  			<p2><br><b> Wellbeing: </b>How satisfied the residents of each country say they feel with life overall, on a scale from zero to ten.<br></p2>
+		</div>
+		<div class="container">
+  			<img style="float:left" src="life_ex.png" alt="Chania" width="40" height="40"> 
+  			<p2><br><b> Life expectancy: </b>The average number of years a person is expected to live in each country.<br></p2>
+		</div>
+		<div class="container">
+  			<img style="float:left" src="inequality.png" alt="Chania" width="40" height="40"> 
+  			<p2><br><b> Inequality of outcomes: </b>The inequalities between people within a country, in terms of how long they live, and how happy they feel.</p2>
+		</div>
+		<div class="container">
+  			<img style="float:left" src="footprint.png" alt="Chania" width="40" height="40"> 
+  			<p2><br><b>Ecological Footprint: </b>The average impact that each resident of a country places on the environment.</p2>
+		</div>
+		<div class="container">
+  			<img style="float:left" src="hpi.png" alt="Chania" width="400" height="200"> 
+		</div>
+	</div>
+</body>
+</html>
+
+
